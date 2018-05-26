@@ -6,7 +6,7 @@ import { BookingService } from './services/booking.service'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css', '../styles.scss']
 })
-export class AppComponent implements OnInit{
+export class BidForMealComponent implements OnInit{
   booking = {};
 
   constructor(private _bookingService: BookingService) {}
