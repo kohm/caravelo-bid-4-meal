@@ -1,0 +1,3 @@
+<div *ngFor="let journey of journeys; let i = index">
+  <app-journey-board [name]="journey.key" [index]="i" [attr.data-index]="i"></app-journey-board>
+</div>

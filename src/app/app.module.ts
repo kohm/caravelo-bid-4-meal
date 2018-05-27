@@ -11,8 +11,11 @@ import {MealsComponent} from './structure/meals/meals.component';
 import {BadgesComponent} from './structure/badges/badges.component';
 import {RewardsComponent} from './structure/rewards/rewards.component';
 import {HelpComponent} from './structure/help/help.component';
+import { JourneyBoardComponent } from './components/journey-board/journey-board.component';
+import { JourneysComponent } from './structure/journeys/journeys.component';
 
 let defstate = {name: 'defstate', url: '', component: HelpComponent};
+let journeys = {name: 'journeys', url: '/journeys', component: JourneysComponent};
 let meals = {name: 'meals', url: '/meals', component: MealsComponent};
 let badges = {name: 'badges', url: '/badges', component: BadgesComponent};
 let rewards = {name: 'rewards', url: '/rewards', component: RewardsComponent};
@@ -26,13 +29,15 @@ let help = {name: 'help', url: '/help', component: HelpComponent};
     MealsComponent,
     BadgesComponent,
     RewardsComponent,
-    HelpComponent
+    HelpComponent,
+    JourneyBoardComponent,
+    JourneysComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     UIRouterModule.forRoot({
-        states: [meals, badges, rewards, help, defstate],
+        states: [journeys, meals, badges, rewards, help, defstate],
         useHash: true
       }
     )

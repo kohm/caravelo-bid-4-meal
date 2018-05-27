@@ -7,23 +7,10 @@ import { BookingService } from '../../services/booking.service'
   styleUrls: ['./meals.component.scss']
 })
 export class MealsComponent implements OnInit {
-  booking = {};
-  constructor(private _bookingService: BookingService) {}
+
+  constructor() {}
 
   ngOnInit() {
-    console.log('asd');
-    this._bookingService.getJourneys().subscribe(
-      (resBookingData ) => {
-        this.booking = JSON.stringify(resBookingData);
-        console.log(resBookingData);
-      }
-    );
-    this._bookingService.getMealsOptions().subscribe(
-      (resBookingData ) => {
-        this.booking = JSON.stringify(resBookingData);
-        console.log(resBookingData);
-      }
-    )
   }
 
 }
