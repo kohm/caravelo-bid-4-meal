@@ -1,11 +1,21 @@
-journey-board {{name || 'works'}}!
-<button class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#collapse-' + index"
-        aria-expanded="false" aria-controls="collapseExample">
-  Collapse
-</button>
-<div class="collapse" id="collapse-{{index}}">
-  <div class="card card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh
-    helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+<div class="journey-board">
+  <div class="panel-header">
+    <span class="iata-code">{{name.split(' ')[1].split('-')[0]}}</span>
+    <i class="fa fa-plane"></i>
+    <span class="iata-code">{{name.split(' ')[1].split('-')[1]}}</span>
+    <a href="#" class="" data-toggle="collapse" [attr.data-target]="'#collapse-' + index"
+            aria-expanded="false" aria-controls="collapseExample">
+      <i class="fa fa-chevron-down" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="panel-body">
+    <div class="collapse" id="collapse-{{index}}">
+      <div class="card card-body">
+        <div *ngFor="let meal of mealOptions">
+          {{meal.desc}}
+        </div>
+      </div>
+      <button class="btn btn-sm btn-primary">Close Offers</button>
+    </div>
   </div>
 </div>

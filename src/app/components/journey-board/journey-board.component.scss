@@ -1,0 +1,19 @@
+@import "../../../sass/variables";
+
+.journey-board {
+    margin-bottom: 40px;
+    text-align: center;
+    width: 100%;
+    .panel-header {
+        background-color: $b4m-green;
+        color: $b4m-heater;
+
+        .iata-code {
+            margin: 0 20px;
+            padding: 1px 0;
+        }
+        .fa-plane {
+            transform: rotate(45deg);
+        }
+    }
+}

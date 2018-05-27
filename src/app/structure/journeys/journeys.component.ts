@@ -8,7 +8,6 @@ import { BookingService } from '../../services/booking.service'
 })
 export class JourneysComponent implements OnInit {
   public journeys = [];
-  public mealOptions = [];
   constructor(private _bookingService: BookingService) {}
 
   ngOnInit() {
@@ -19,12 +18,6 @@ export class JourneysComponent implements OnInit {
         console.log(resBookingData);
       }
     );
-    this._bookingService.getMealsOptions().subscribe(
-      (resBookingData ) => {
-        this.mealOptions = Object.keys(resBookingData).map(i => resBookingData[i]);
-        console.log(resBookingData);
-      }
-    )
   }
 
 }
