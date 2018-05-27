@@ -1,12 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import {map} from "rxjs/internal/operators";
 
 @Injectable()
 export class BookingService {
   private _url: string = '/assets/server/booking.json';
 
   constructor(private _http: HttpClient) {};
-  getBooking () {
-    return this._http.get(this._url);
+
+  //TODO Describe response instead of using <any>
+
+  getJourneys() {
+    return this._http.get<any>(this._url).pipe(map(res => res.booking.journeys));
+  }
+
+  getMealsOptions() {
+    return this._http.get<any>(this._url).pipe(map(res => res.options));
   }
 }

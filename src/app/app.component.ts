@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BookingService } from './services/booking.service'
 
 @Component({
   selector: 'app-root',
@@ -9,16 +8,8 @@ import { BookingService } from './services/booking.service'
 export class BidForMealComponent implements OnInit{
   booking = {};
 
-  constructor(private _bookingService: BookingService) {}
+  constructor() {}
 
   ngOnInit() {
-    console.log('asd');
-    this._bookingService.getBooking().subscribe(
-      (resBookingData ) => {
-        this.booking = JSON.stringify(resBookingData);
-        console.log(resBookingData);
-      }
-    )
   }
-  title = 'app';
 }

@@ -12,6 +12,7 @@ import {BadgesComponent} from './structure/badges/badges.component';
 import {RewardsComponent} from './structure/rewards/rewards.component';
 import {HelpComponent} from './structure/help/help.component';
 
+let defstate = {name: 'defstate', url: '', component: HelpComponent};
 let meals = {name: 'meals', url: '/meals', component: MealsComponent};
 let badges = {name: 'badges', url: '/badges', component: BadgesComponent};
 let rewards = {name: 'rewards', url: '/rewards', component: RewardsComponent};
@@ -31,7 +32,7 @@ let help = {name: 'help', url: '/help', component: HelpComponent};
     BrowserModule,
     HttpClientModule,
     UIRouterModule.forRoot({
-        states: [meals, badges, rewards, help],
+        states: [meals, badges, rewards, help, defstate],
         useHash: true
       }
     )
@@ -39,5 +40,5 @@ let help = {name: 'help', url: '/help', component: HelpComponent};
   providers: [BookingService],
   bootstrap: [BidForMealComponent]
 })
-export class AppModule {
+export class BidForMeal {
 }
