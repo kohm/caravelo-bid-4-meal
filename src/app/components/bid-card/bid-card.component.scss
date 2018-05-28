@@ -1,0 +1,52 @@
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
+
+.bid-card {
+    background-color: $b4m-yellow;
+    display: inline-block;
+    margin-bottom: 20px;
+    position: relative;
+    height: 200px;
+    width: 200px;
+
+    &.revealed {
+        background-color: $b4m-heater;
+    }
+
+    .face, .back {
+        padding: 20px;
+    }
+
+    .close-card, .face {
+        color: $b4m-black;
+    }
+
+    .close-card {
+        position: absolute;
+        line-height: 1;
+        right: 7px;
+        top: 5px;
+    }
+
+    .face {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            box-shadow: 0 2px 3px 0 #909090;
+        }
+
+        h4 {
+            @include linesLimit(58px, 2);
+        }
+    }
+
+    .back {
+        p {
+            font-size: 16px;
+        }
+    }
+}

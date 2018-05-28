@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from '../../services/booking.service'
+import {SelectionService} from "../../services/selection.service";
 
 @Component({
   selector: 'app-journeys',
@@ -8,16 +9,16 @@ import { BookingService } from '../../services/booking.service'
 })
 export class JourneysComponent implements OnInit {
   public journeys = [];
-  constructor(private _bookingService: BookingService) {}
+  public ouputJsonResponse = {};
+  constructor(private _bookingService: BookingService, private selection: SelectionService) {}
 
   ngOnInit() {
-    console.log('asd');
     this._bookingService.getJourneys().subscribe(
       (resBookingData ) => {
         this.journeys = resBookingData;
-        console.log(resBookingData);
       }
     );
+    this.selection.currentMessage.subscribe(ouputJsonResponse => this.ouputJsonResponse = JSON.stringify(ouputJsonResponse))
   }
 
 }

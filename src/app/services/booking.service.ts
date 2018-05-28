@@ -8,8 +8,6 @@ export class BookingService {
 
   constructor(private _http: HttpClient) {};
 
-  //TODO Describe response instead of using <any>
-
   getJourneys() {
     return this._http.get<any>(this._url).pipe(map(res => res.booking.journeys));
   }

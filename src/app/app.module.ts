@@ -2,7 +2,9 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {BookingService} from './services/booking.service'
+import {SelectionService} from "./services/selection.service";
 import {UIRouterModule} from "@uirouter/angular";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {BidForMealComponent} from './app.component';
 import {NavbarComponent} from './structure/global-navbar/navbar.component';
@@ -13,6 +15,7 @@ import {RewardsComponent} from './structure/rewards/rewards.component';
 import {HelpComponent} from './structure/help/help.component';
 import { JourneyBoardComponent } from './components/journey-board/journey-board.component';
 import { JourneysComponent } from './structure/journeys/journeys.component';
+import { BidCardComponent } from './components/bid-card/bid-card.component';
 
 let defstate = {name: 'defstate', url: '', component: HelpComponent};
 let journeys = {name: 'journeys', url: '/journeys', component: JourneysComponent};
@@ -31,10 +34,12 @@ let help = {name: 'help', url: '/help', component: HelpComponent};
     RewardsComponent,
     HelpComponent,
     JourneyBoardComponent,
-    JourneysComponent
+    JourneysComponent,
+    BidCardComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     UIRouterModule.forRoot({
         states: [journeys, meals, badges, rewards, help, defstate],
@@ -42,7 +47,7 @@ let help = {name: 'help', url: '/help', component: HelpComponent};
       }
     )
   ],
-  providers: [BookingService],
+  providers: [BookingService, SelectionService],
   bootstrap: [BidForMealComponent]
 })
 export class BidForMeal {

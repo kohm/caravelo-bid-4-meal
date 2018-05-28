@@ -17,7 +17,6 @@ export class JourneyBoardComponent implements OnInit {
     this._bookingService.getMealsOptions().subscribe(
       (resBookingData ) => {
         this.mealOptions = Object.keys(resBookingData).map(i => resBookingData[i]);
-        console.log(resBookingData);
       }
     )
   }
