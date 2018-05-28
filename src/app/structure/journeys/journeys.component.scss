@@ -1,0 +1,14 @@
+@import "../../../sass/variables";
+
+.section-title {
+    margin-bottom: 30px;
+}
+.json-data{
+    margin-top: 40px;
+    pre {
+        color: black;
+        display: inline-block;
+        padding: 20px;
+        background-color: $b4m-old-orange;
+    }
+}

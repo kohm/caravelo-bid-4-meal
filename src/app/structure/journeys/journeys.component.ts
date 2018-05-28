@@ -9,6 +9,7 @@ import {SelectionService} from "../../services/selection.service";
 })
 export class JourneysComponent implements OnInit {
   public journeys = [];
+  public viewData = false;
   public ouputJsonResponse = {};
   constructor(private _bookingService: BookingService, private selection: SelectionService) {}
 

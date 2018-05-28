@@ -1,4 +1,5 @@
 @import "../../../sass/variables";
+@import "../../../sass/mixins";
 
 .journey-board {
     margin-bottom: 40px;
@@ -7,16 +8,54 @@
     .panel-header {
         background-color: $b4m-green;
         color: $b4m-heater;
+        position: relative;
+        z-index: 1;
 
-        .iata-code {
-            font-size: 20px;
-            margin: 0 20px;
-            padding: 1px 0;
-            line-height: 60px;
+        .journey-indicators {
+            position: relative;
+            z-index: 3;
+            .iata-code {
+                font-size: 20px;
+                margin: 0 20px;
+                padding: 1px 0;
+                line-height: 60px;
+            }
+            .fa-plane {
+                transform: rotate(45deg);
+            }
+
+            .panel-navigator {
+                font-size: 20px;
+                display: inline-block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                @include translate(0, -50%);
+
+                .fa {
+                    color: $b4m-heater;
+                }
+            }
         }
-        .fa-plane {
-            transform: rotate(45deg);
+
+        .panel-switch {
+            color: $b4m-heater;
+            border-radius: 50%;
+            position: absolute;
+            background-color: $b4m-green;
+            bottom: 0;
+            left: 50%;
+            @include translate(-50%, 40%);
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+            .fa {
+                position: absolute;
+                bottom: 5px;
+                @include horizontalCenter();
+            }
         }
+
     }
 
     .panel-body {

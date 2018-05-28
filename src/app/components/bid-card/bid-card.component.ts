@@ -1,4 +1,4 @@
-import {Component, Input, Output, OnInit} from '@angular/core';
+import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 import {trigger,  style,  animate,  transition} from '@angular/animations';
 import {Bid} from "../../interfaces/bid";
 import {SelectionService} from "../../services/selection.service";
@@ -23,6 +23,8 @@ export class BidCardComponent implements OnInit {
   @Input() public mealId;
   @Input() public bidJump;
   @Input() public currency;
+  @Input() public disabledCard;
+  @Output() bidded: EventEmitter<Boolean> = new EventEmitter();
   public revealCard = false;
   public amount = 0;
   private _bid: Bid;
@@ -38,6 +40,8 @@ export class BidCardComponent implements OnInit {
     this._bid = {journeyKey: this.journeyKey, amount: this.amount, currency: this.currency, mealId: this.mealId};
     this.selection.addSelection(this._bid);
     this.disableControllers = true;
+
+    this.bidded.emit(true);
   }
 
   decreaseBid() {

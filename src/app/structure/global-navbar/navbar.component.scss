@@ -8,4 +8,9 @@
             width: 156px;
         }
     }
+    .nav-link {
+        &.active {
+            color: $b4m-green;
+        }
+    }
 }

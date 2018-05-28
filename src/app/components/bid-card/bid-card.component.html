@@ -1,8 +1,8 @@
-<div class="bid-card" [ngClass]="{'revealed': revealCard}">
+<div class="bid-card" [ngClass]="{'revealed': revealCard, 'disabled-card': disabledCard}">
   <a href="#" class="close-card" *ngIf="revealCard" (click)="revealCard = false">
     <i class="fa fa-times"></i>
   </a>
-  <a class="face" href="#" *ngIf="!revealCard" [@fadeInOut] (click)="revealCard = !revealCard; false">
+  <a class="face" href="#" *ngIf="!revealCard" [@fadeInOut] (click)="revealCard = !revealCard && !disabledCard; false">
     <h4>{{description}}</h4>
     <p>Offer <strong>less</strong> than <br> <span>{{maxPrice}} {{currency}}</span> <br> and <strong>TAKE IT</strong></p>
     <span class="open-card">Bid</span>
@@ -10,7 +10,7 @@
   <div class="back" *ngIf="revealCard" [@fadeInOut]>
     <p>{{description}}</p>
     <span class="current-bid">{{amount}} {{currency}}</span>
-    <div class="bid-controllers">
+    <div class="bid-controllers btn-group" role="group">
       <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount <= minPrice || disableControllers}" (click)="decreaseBid(); false">-</a>
       <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': disableControllers}" (click)="bid(); false">Bid</a>
       <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount >= maxPrice || disableControllers}" (click)="increaseBid(); false">+</a>

@@ -1,7 +1,12 @@
-<h1>MANAGE YOUR JOURNEYS</h1>
+<h2 class="section-title">MANAGE YOUR JOURNEYS</h2>
+
+<p>As an instructive text this is intended to explain this section.</p>
 
 <div *ngFor="let journey of journeys; let i = index">
-  <app-journey-board [name]="journey.key" [index]="i" [attr.data-index]="i"></app-journey-board>
+  <app-journey-board [journeyData]="journey" [index]="i" [attr.data-index]="i"></app-journey-board>
+</div>
+<button class="btn btn-success" (click)="viewData = true">View Data</button>
+<div class="json-data">
+  <pre *ngIf="viewData && (ouputJsonResponse != null)">{{ouputJsonResponse | json}}</pre>
 </div>
 
-<pre *ngIf="ouputJsonResponse != null">{{ouputJsonResponse | json}}</pre>

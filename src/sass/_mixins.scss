@@ -22,3 +22,8 @@ Mixin for making translations cross-browser
     -o-transform: translate($x, $y);
     transform: translate($x, $y);
 }
+
+@mixin horizontalCenter() {
+    left: 50%;
+    @include translate(-50%, 0);
+}

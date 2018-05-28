@@ -4,4 +4,16 @@
     display: block;
     height: 200px;
     background: $b4m-pewter;
+    position: relative;
+    margin-top: 40px;
+    a, p {
+        color: $b4m-heater;
+        font-size: 12px;
+    }
+
+    .global-links {
+        position: absolute;
+        width: 100%;
+        bottom: 20px;
+    }
 }
