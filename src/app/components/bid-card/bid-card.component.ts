@@ -24,20 +24,43 @@ export class BidCardComponent implements OnInit {
   @Input() public bidJump;
   @Input() public currency;
   public revealCard = false;
-  private amount = this.maxPrice || 0;
+  public amount = 0;
   private _bid: Bid;
+  private disableInBid = true;
+  private disableDecBid = false;
+  private disableControllers = false;
 
   message: string;
 
   constructor(private selection: SelectionService) {
   }
   bid() {
-    this._bid = {journeyKey: this.journeyKey, amount: this.maxPrice, currency: this.currency, mealId: this.mealId};
+    this._bid = {journeyKey: this.journeyKey, amount: this.amount, currency: this.currency, mealId: this.mealId};
     this.selection.addSelection(this._bid);
+    this.disableControllers = true;
+  }
+
+  decreaseBid() {
+    if ((this.amount - this.bidJump) > this.minPrice) {
+      this.amount = this.amount - this.bidJump
+    } else {
+      this.amount = this.minPrice;
+      this.disableDecBid = true;
+    }
+  }
+
+  increaseBid() {
+    if ((this.amount + this.bidJump) < this.maxPrice) {
+      this.amount = this.amount + this.bidJump
+    } else {
+      this.amount = this.maxPrice;
+      this.disableInBid = true;
+    }
   }
 
   ngOnInit() {
     this.selection.currentMessage.subscribe(message => this.message = JSON.stringify(message))
+    this.amount = this.maxPrice || 0;
   }
 
 }

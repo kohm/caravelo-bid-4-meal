@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
+import {Bid} from "../interfaces/bid";
 
 @Injectable()
 export class SelectionService {
@@ -12,7 +13,7 @@ export class SelectionService {
   currentMessage = this.messageSource.asObservable();
   constructor() { }
 
-  addSelection(selection: any) {
+  addSelection(selection: Bid) {
     this._finalSelection.selection.push(selection);
     this.messageSource.next(this._finalSelection);
   }

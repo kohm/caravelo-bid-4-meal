@@ -22,6 +22,7 @@
 
     .close-card, .face {
         color: $b4m-black;
+        z-index: 1;
     }
 
     .close-card {
@@ -48,9 +49,22 @@
     .back {
         p {
             font-size: 16px;
+            @include linesLimit(48px, 2);
         }
-        .bid-controls {
-
+        .current-bid {
+            font-weight: bold;
+            color: $b4m-green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 5px;
+            @include translate(-50%, -50%);
+        }
+        .bid-controllers {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            @include translate(-50%, 0)
         }
     }
 
