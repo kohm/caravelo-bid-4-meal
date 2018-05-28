@@ -13,8 +13,11 @@
         background-color: $b4m-heater;
     }
 
-    .face, .back {
+    .face, .back, .full-details {
+        height: 100%;
         padding: 20px;
+        position: relative;
+        width: 100%;
     }
 
     .close-card, .face {
@@ -30,8 +33,6 @@
 
     .face {
         display: inline-block;
-        height: 100%;
-        width: 100%;
         position: relative;
 
         &:hover, &:focus {
@@ -48,5 +49,12 @@
         p {
             font-size: 16px;
         }
+        .bid-controls {
+
+        }
+    }
+
+    .full-details {
+
     }
 }

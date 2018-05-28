@@ -18,7 +18,7 @@ export class JourneysComponent implements OnInit {
         this.journeys = resBookingData;
       }
     );
-    this.selection.currentMessage.subscribe(ouputJsonResponse => this.ouputJsonResponse = JSON.stringify(ouputJsonResponse))
+    this.selection.currentMessage.subscribe(ouputJsonResponse => this.ouputJsonResponse = ouputJsonResponse)
   }
 
 }

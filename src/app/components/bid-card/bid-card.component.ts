@@ -24,6 +24,7 @@ export class BidCardComponent implements OnInit {
   @Input() public bidJump;
   @Input() public currency;
   public revealCard = false;
+  private amount = this.maxPrice || 0;
   private _bid: Bid;
 
   message: string;

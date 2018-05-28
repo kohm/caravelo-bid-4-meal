@@ -15,8 +15,7 @@
           <app-bid-card class="bid-card"
                         [journeyKey]="name" [mealId]="meal.mealId" [description]="meal.desc"
                         [minPrice]="meal.priceRange.min" [maxPrice]="meal.priceRange.max"
-                        [bidJump]="meal.priceRange.max" [currency]="meal.currency"
-                        (bidded)="onVoted($event)">
+                        [bidJump]="meal.priceRange.max" [currency]="meal.currency">
           </app-bid-card>
         </div>
       </div>
