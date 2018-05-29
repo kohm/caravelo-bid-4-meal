@@ -1,9 +1,9 @@
 <div class="journey-board">
   <div class="panel-header">
     <div class="journey-indicators">
-      <span class="iata-code">{{journeyData.key.split(' ')[1].split('-')[0]}}</span>
+      <span class="iata-code">{{journeyData.departure}}</span>
       <i class="fa fa-plane"></i>
-      <span class="iata-code">{{journeyData.key.split(' ')[1].split('-')[1]}}</span>
+      <span class="iata-code">{{journeyData.arrival}}</span>
       <div class="panel-navigator" *ngIf="!collapsed">
         <a href="#" class="btn" (click)="showMealOptions = true; false"><i class="fa fa-coffee"></i></a>
         <a href="#" class="btn" (click)="showMealOptions = false; false"><i class="fa fa-clock-o"></i></a>
