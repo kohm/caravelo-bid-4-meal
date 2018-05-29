@@ -31,8 +31,8 @@
         <div class="flight-status-card">
           <P><span>Key: {{journeyData.key}}</span></P>
           <P><span>Flight Number: {{journeyData.flight}}</span></P>
-          <P><span>Departure: {{journeyData.departureDate}}</span></P>
-          <P><span>Arrival: {{journeyData.arrivalDate}}</span></P>
+          <P><span>Departure: {{journeyData.departureDate | date: 'short'}}</span></P>
+          <P><span>Arrival: {{journeyData.arrivalDate | date: 'short'}}</span></P>
         </div>
       </div>
     </div>
