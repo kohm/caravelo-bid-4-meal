@@ -14,11 +14,11 @@ export class JourneyBoardComponent implements OnInit {
   public collapsed = true;
   public showMealOptions = true;
   private disableCard = false;
-  private flightNumber:string;
-  private departureIata:string;
-  private arrivalIata:string;
-  private departureDate:string;
-  private arrivalDate:string;
+  private flightNumber: string;
+  private departureIata: string;
+  private arrivalIata: string;
+  private departureDate: string;
+  private arrivalDate: string;
 
   constructor(private _bookingService: BookingService) {
   }
@@ -35,7 +35,7 @@ export class JourneyBoardComponent implements OnInit {
       (resBookingData ) => {
         this.mealOptions = Object.keys(resBookingData).map(i => resBookingData[i]);
       }
-    )
+    );
   }
 
   disableBidCards() {

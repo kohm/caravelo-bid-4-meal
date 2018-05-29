@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import {BookingService} from './services/booking.service'
-import {SelectionService} from "./services/selection.service";
-import {UIRouterModule} from "@uirouter/angular";
+import {BookingService} from './services/booking.service';
+import {SelectionService} from './services/selection.service';
+import {UIRouterModule} from '@uirouter/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {BidForMealComponent} from './app.component';
@@ -17,12 +17,12 @@ import { JourneyBoardComponent } from './components/journey-board/journey-board.
 import { JourneysComponent } from './structure/journeys/journeys.component';
 import { BidCardComponent } from './components/bid-card/bid-card.component';
 
-let defstate = {name: 'defstate', url: '', component: HelpComponent};
-let journeys = {name: 'journeys', url: '/journeys', component: JourneysComponent};
-let meals = {name: 'meals', url: '/meals', component: MealsComponent};
-let badges = {name: 'badges', url: '/badges', component: BadgesComponent};
-let rewards = {name: 'rewards', url: '/rewards', component: RewardsComponent};
-let help = {name: 'help', url: '/help', component: HelpComponent};
+const defstate = {name: 'defstate', url: '', component: HelpComponent};
+const journeys = {name: 'journeys', url: '/journeys', component: JourneysComponent};
+const meals = {name: 'meals', url: '/meals', component: MealsComponent};
+const badges = {name: 'badges', url: '/badges', component: BadgesComponent};
+const rewards = {name: 'rewards', url: '/rewards', component: RewardsComponent};
+const help = {name: 'help', url: '/help', component: HelpComponent};
 
 @NgModule({
   declarations: [

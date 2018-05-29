@@ -1,7 +1,7 @@
 import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
 import {trigger,  style,  animate,  transition} from '@angular/animations';
-import {Bid} from "../../interfaces/bid";
-import {SelectionService} from "../../services/selection.service";
+import {Bid} from '../../interfaces/bid';
+import {SelectionService} from '../../services/selection.service';
 
 @Component({
   selector: 'app-bid-card',
@@ -10,8 +10,8 @@ import {SelectionService} from "../../services/selection.service";
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
-        style({opacity:0}),
-        animate(150, style({opacity:0.5}))
+        style({opacity: 0}),
+        animate(150, style({opacity: 0.5}))
       ])
     ])
   ]})
@@ -46,7 +46,7 @@ export class BidCardComponent implements OnInit {
 
   decreaseBid() {
     if ((this.amount - this.bidJump) > this.minPrice) {
-      this.amount = this.amount - this.bidJump
+      this.amount = this.amount - this.bidJump;
     } else {
       this.amount = this.minPrice;
       this.disableDecBid = true;
@@ -55,7 +55,7 @@ export class BidCardComponent implements OnInit {
 
   increaseBid() {
     if ((this.amount + this.bidJump) < this.maxPrice) {
-      this.amount = this.amount + this.bidJump
+      this.amount = this.amount + this.bidJump;
     } else {
       this.amount = this.maxPrice;
       this.disableInBid = true;
@@ -63,7 +63,7 @@ export class BidCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.selection.currentMessage.subscribe(message => this.message = JSON.stringify(message))
+    this.selection.currentMessage.subscribe(message => this.message = JSON.stringify(message));
     this.amount = this.maxPrice || 0;
   }
 

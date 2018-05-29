@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BookingService } from '../../services/booking.service'
-import {SelectionService} from "../../services/selection.service";
+import { BookingService } from '../../services/booking.service';
+import {SelectionService} from '../../services/selection.service';
 
 @Component({
   selector: 'app-journeys',
@@ -19,7 +19,7 @@ export class JourneysComponent implements OnInit {
         this.journeys = resBookingData;
       }
     );
-    this.selection.currentMessage.subscribe(ouputJsonResponse => this.ouputJsonResponse = ouputJsonResponse)
+    this.selection.currentMessage.subscribe(ouputJsonResponse => this.ouputJsonResponse = ouputJsonResponse);
   }
 
 }

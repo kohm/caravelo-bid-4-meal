@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Bid} from "../interfaces/bid";
+import {Bid} from '../interfaces/bid';
 
 @Injectable()
 export class SelectionService {

@@ -11,9 +11,9 @@
     <p>{{description}}</p>
     <span class="current-bid">{{amount}} {{currency}}</span>
     <div class="bid-controllers btn-group" role="group">
-      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount <= minPrice || disableControllers}" (click)="decreaseBid(); false">-</a>
-      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': disableControllers}" (click)="bid(); false">Bid</a>
-      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount >= maxPrice || disableControllers}" (click)="increaseBid(); false">+</a>
+      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount <= minPrice || disableControllers || disabledCard}" (click)="decreaseBid(); false">-</a>
+      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': disableControllers || disabledCard}" (click)="bid(); false">Bid</a>
+      <a href="" class="btn btn-sm btn-primary" [ngClass]="{'disabled': amount >= maxPrice || disableControllers || disabledCard}" (click)="increaseBid(); false">+</a>
     </div>
   </div>
   <div class="full-details" *ngIf="fullDetails">
