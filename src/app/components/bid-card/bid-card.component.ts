@@ -26,6 +26,7 @@ export class BidCardComponent implements OnInit {
   @Input() public disabledCard;
   @Output() bidded: EventEmitter<Boolean> = new EventEmitter();
   public revealCard = false;
+  public cardBidded = false;
   public amount = 0;
   private _bid: Bid;
   private disableInBid = true;
@@ -40,7 +41,8 @@ export class BidCardComponent implements OnInit {
     this._bid = {journeyKey: this.journeyKey, amount: this.amount, currency: this.currency, mealId: this.mealId};
     this.selection.addSelection(this._bid);
     this.disableControllers = true;
-
+    this.revealCard = false;
+    this.cardBidded = true;
     this.bidded.emit(true);
   }
 

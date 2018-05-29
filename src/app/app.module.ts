@@ -17,7 +17,7 @@ import { JourneyBoardComponent } from './components/journey-board/journey-board.
 import { JourneysComponent } from './structure/journeys/journeys.component';
 import { BidCardComponent } from './components/bid-card/bid-card.component';
 
-const defstate = {name: 'defstate', url: '', component: HelpComponent};
+const defstate = {name: 'defstate', url: '', component: JourneysComponent};
 const journeys = {name: 'journeys', url: '/journeys', component: JourneysComponent};
 const meals = {name: 'meals', url: '/meals', component: MealsComponent};
 const badges = {name: 'badges', url: '/badges', component: BadgesComponent};
